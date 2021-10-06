@@ -1,13 +1,11 @@
-# concrete, pattern, boilerplate, associated with, demonstrate, portion
-# other than, nested, access, negate, the opposite of, reverse, 
 
-# useReducer which also allow you to manage state and re-render a component
-# whenever that state changes and idea behind useReducer 
-# it give you a more concrete way to handle complex state
-# so it give you set actions that you can perform on your state
-# it's going to convert your current state to a new version of the state
-# based on the action that you send it 
-# useReducer is similar to redux
+> useReducer which also allow you to manage state and re-render a component
+> whenever that state changes and idea behind useReducer 
+> it give you a more concrete way to handle complex state
+> so it give you set actions that you can perform on your state
+> it's going to convert your current state to a new version of the state
+> based on the action that you send it 
+> useReducer is similar to redux
 
 ```js
 import React, {useState} from 'react'
@@ -32,7 +30,7 @@ export default function App(){
     )
 }
 ```
-# convert this counter application to useReducer
+#### convert this counter application to useReducer
 ```js
 import React, {useState, useReducer } from 'react'
 
@@ -129,12 +127,12 @@ export default function App(){
     )
 }
 ```
----------------------------------------------------------------------------
-# when you're working with more complex state or a lot of nested components that 
-# you have to worry about passing props down into 
-# example to show you how this can be used instead of a more complex use case 
-# and really show you the power of use reducer
-# App.js
+---------------------------------------------------------------------------------------------------------------------------
+> when you're working with more complex state or a lot of nested components that 
+> you have to worry about passing props down into 
+> example to show you how this can be used instead of a more complex use case 
+> and really show you the power of use reducer
+#### App.js
 ```js
 import React, {useState, useReducer } from 'react'
 import Todo from './Todo.js'
@@ -149,7 +147,7 @@ function reducer(todos, action){
     switch(action.type){
         case ACTIONS.ADD_TODO:
             return [...todos, newTodo(action.payload.name)]
-        case ACTIONS.TOGGLE_TODO: // 切换任务完成还是没完成的状态
+        case ACTIONS.TOGGLE_TODO: 
             // we need to take all of our current todos
             // and we need to map over them to get a new list of todos
             // and we didn't take the current todo that we have toggled
@@ -193,10 +191,9 @@ export default function App(){
         e.preventDefault()
 
         dispatch({ type: ACTION.ADD_TODO, payload: {name: name}}) 
-        //payload传递在input输入的name值
         // payload is an object which essentially contains all of the variable values
         // we need to perform that action in our case we need to pass in a name
-        // set our name back to an empty string 清空输入框
+        // set our name back to an empty string 
         setName('')
     }
 
@@ -213,7 +210,7 @@ export default function App(){
     )
 }
 ```
-# Todo.js
+#### Todo.js
 ```js
 import React from 'react'
 import {ACTIONS} from './App/js' 
