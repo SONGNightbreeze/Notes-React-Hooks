@@ -14,30 +14,29 @@ export default function App(){
     )
 }
 ```
-# create a custom hook which is going to allow us to store variables 
-# inside of local storage but we can use it just like we would useState
+> create a custom hook which is going to allow us to store variables 
+> inside of local storage but we can use it just like we would useState
 
-# when you're creating a custom hook, the first thing u need to do 
-# give it some form of name and you want that name to start with use 
-# this is just a convention that react uses for creating custom hook
+> when you're creating a custom hook, the first thing u need to do 
+> give it some form of name and you want that name to start with use 
+> this is just a convention that react uses for creating custom hook
 
-# useLocalStorage.js
+## useLocalStorage.js
 ```js
 import React from 'react'
 // i want this hook to work the same as useState
-// exactly return the exact same thing as useState
 
-// we need to do setup some code for taking in our initial value因为useState有默认值的功能
+// we need to do setup some code for taking in our initial value
+// because useState have a default value
 export default function useLocalStorage(initialValue){
     // inside of hook, we can use other hooks built-in to react
     const [value, setValue] = useState(initialValue)
 
     return [value, setValue]
     // return from this local storage is exactly the same as useState over here
-    // 和useState的功能一样 
 }
 ```
-# App.js
+## App.js
 ```js
 import React from 'react'
 import useLocalStorage from './useLocalStorage'
@@ -47,8 +46,8 @@ export default function App(){
     // .....
 ```
 -------------------------------------------------------------
-# let's create the logic for persisting our data as well as for taking our data
-# out of local storage 
+> let's create the logic for persisting our data as well as for taking our data
+> out of local storage 
 ```js
 import {useState} from 'react'
 
@@ -86,14 +85,14 @@ export default function useLocalStorage(initialValue){
 // so it's just going to skip  const savedValue = JSON.parse(localStorage.getItem(key))
 // and return down here our initial value 
 ```
-# and we can even check to make sure the function version works 
-# in App const [name, setName] = useLocalStorage('name', () => '')
-# and passing a function that's going to return an empty string 
-# and if we save we should still get everything working as before
+> and we can even check to make sure the function version works 
+> in App const [name, setName] = useLocalStorage('name', () => '')
+> and passing a function that's going to return an empty string 
+> and if we save we should still get everything working as before
 
-# and now inside of this used local storage hook 
-# we need to write our code for updating and saving our value to local storage
-# we need to useEffect
+> and now inside of this used local storage hook 
+> we need to write our code for updating and saving our value to local storage
+> we need to useEffect
 ```js
 import {useState, useEffect} from 'react'
 
@@ -125,10 +124,10 @@ export default function useLocalStorage(initialValue){
 }
 ```
 ---------------------------
-# another custom hook 
-# i want to every time a variable changed i want to log that variables
-# to our console 
-# useUpdatedLogger.js
+## another custom hook 
+> i want to every time a variable changed i want to log that variables
+> to our console 
+## useUpdatedLogger.js
 ```js
 import {useEffect} from 'react'
 // whatever value changes i want to log back to the console 
@@ -138,7 +137,7 @@ export default function useUpdateLogger(value){
     }, [value])
 } 
 ```
-# App.js
+## App.js
 ```js
 import React from 'react'
 import useLocalStorage from './useLocalStorage'
