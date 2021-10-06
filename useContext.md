@@ -26,19 +26,20 @@ export default function App(){
     )
 }
 ```
-> we can compare and contrast the class version and the function version of context
-> because they're actually very different
+> we can compare and contrast the class version and the function version of context because they're actually very different
+>
 > another important thing to note is that 
 > when you're using context it's broken into two different sections
-> you have a context provider which is what you want to wrap all of the code
-> that needs access to the information in the context
+> 
+> you have a context provider which is what you want to wrap all of the code that needs access to the information in the context
 > and it has a single prop called the value which is going to be whatever 
-> the value of your context is 
-> the important thing about context is everything inside of our provider
-> all of their components children all have access to the variable in this value
-> prop of our theme context provider
-> context is for passing down props essentially all the way down into any of the children
-> without actually having to manually pass you  dark theme into the props of each one of 
+> 
+> the value of your context is the important thing about context is everything inside of our provider
+> all of their components children all have access to the variable in this value prop of our theme context provider
+>
+> context is for passing down props essentially all the way down into any of the children without actually having to manually 
+> pass you  dark theme into the props of each one of 
+> 
 > these components, it's just available to all of them it's kind of like a global 
 > state for all of the children of the provider, rectangle,  
 
