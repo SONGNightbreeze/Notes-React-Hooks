@@ -1,7 +1,4 @@
-# persistent, local storage, store variables, convention, prefix, extra, persist
-# built-in, crucial part, 
-
-# App.js
+## App.js
 ```js
 import React, {useState} from 'react'
 
