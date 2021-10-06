@@ -309,17 +309,20 @@ export default function FunctionContextComponent(){
 ```
 
 > refresh exactly what's going on so inside of our app
+> 
 > we have theme provider and this is wrapping all of the logic 
 > for handling our state updating our state and pushing out 
-> those different values to all of our children
-> so inside of our theme you can see we have our theme provider
+> 
+> those different values to all of our children so inside of our theme you can see we have our theme provider
 > which is handling creating our state updating our state 
 > and then persisting both of these different values down into our children
 > and then we have these two custom hooks (useTheme、TusehemeUpdate)
 > which give us easy access to these different values so we have our theme value as well as our theme update value 
+> 
 > and this is just a really clean way to handle context inside of react
 > then inside of your components all you need to do use your custom hooks
 > that you created for using the theme or using the theme update function 
+> 
 > you need to provide the thing you just need this one simple theme provide class
 > and we don't have to worry about any of the complexities of handling how react
 > does context internally all that is taken care of in this single theme context class
